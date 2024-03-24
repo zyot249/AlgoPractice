@@ -11,7 +11,6 @@ func Test_containsDuplicate(t *testing.T) {
 		args args
 		want bool
 	}{
-		// TODO: Add test cases.
 		{name: "test1", args: args{nums: []int{1, 2, 3, 1}}, want: true},
 		{name: "test2", args: args{nums: []int{1, 2, 3, 4}}, want: false},
 	}

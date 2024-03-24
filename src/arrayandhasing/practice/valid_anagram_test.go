@@ -12,9 +12,8 @@ func Test_isAnagram(t *testing.T) {
 		args args
 		want bool
 	}{
-		// TODO: Add test cases.
 		{name: "test1", args: args{s: "anagram", t: "nagaram"}, want: true},
-		{name: "test1", args: args{s: "rat", t: "car"}, want: false},
+		{name: "test2", args: args{s: "rat", t: "car"}, want: false},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
