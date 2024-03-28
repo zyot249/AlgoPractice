@@ -24,9 +24,6 @@ If it is a start point of sequence, find next element in its sequence until reac
 
 Time complexity: O(n)
 Space complexity: O(n)
-
-Improvement 1:
-In practice, we found that above solution spends ~1900ms to finish test cases in Leetcode for golang
 */
 func longestConsecutive(nums []int) int {
 	set := make(map[int]bool)
@@ -36,7 +33,7 @@ func longestConsecutive(nums []int) int {
 
 	maxLength := 0
 	//Solution 1
-	//for _, num := range nums {
+	//for num, _ := range set {
 	//	if set[num-1] {
 	//		continue
 	//	}
