@@ -31,28 +31,27 @@ If count var equals to 0, don't fill ')'
 */
 
 func generateParenthesis(n int) []string {
-	open := 0
-	combinations := genAllCombinations(open, n, n)
+	combinations := genAllCombinations(n, 0, 0)
 	return combinations
 }
 
-func genAllCombinations(open int, remainOpen int, remainClose int) []string {
+func genAllCombinations(pairNum int, left int, right int) []string {
 	var result []string
 
-	if remainOpen == 0 && remainClose == 0 {
+	if left == pairNum && right == pairNum {
 		result = append(result, "")
 		return result
 	}
 
-	if remainOpen > 0 {
-		combinations := genAllCombinations(open+1, remainOpen-1, remainClose)
+	if left < pairNum {
+		combinations := genAllCombinations(pairNum, left+1, right)
 		for _, c := range combinations {
 			result = append(result, "("+c)
 		}
 	}
 
-	if remainClose > 0 && open > 0 {
-		combinations := genAllCombinations(open-1, remainOpen, remainClose-1)
+	if right < left {
+		combinations := genAllCombinations(pairNum, left, right+1)
 		for _, c := range combinations {
 			result = append(result, ")"+c)
 		}
