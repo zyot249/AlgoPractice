@@ -17,19 +17,6 @@ Constraints:
 ? A linked list can be reversed either iteratively or recursively. Could you implement both?
 */
 
-/**
-* Definition for singly-linked list.
-* type ListNode struct {
-*     Val int
-*     Next *ListNode
-* }
- */
-
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
-
 /*
 First approach:
 Iteratively
