@@ -5,6 +5,12 @@ type ListNode struct {
 	Next *ListNode
 }
 
+type Node struct {
+	Val    int
+	Next   *Node
+	Random *Node
+}
+
 func CreateLinkedList(arr []int) *ListNode {
 	if len(arr) == 0 {
 		return nil
