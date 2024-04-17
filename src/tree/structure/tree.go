@@ -10,7 +10,11 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-func CreateBinaryTree(vals []int) *TreeNode {
+type Integer struct {
+	Value int
+}
+
+func CreateBinaryTree(vals []*Integer) *TreeNode {
 	if len(vals) == 0 {
 		return nil
 	}
@@ -19,12 +23,12 @@ func CreateBinaryTree(vals []int) *TreeNode {
 	return root
 }
 
-func createBinarySubTree(vals []int, i int) *TreeNode {
-	if i >= len(vals) {
+func createBinarySubTree(vals []*Integer, i int) *TreeNode {
+	if i >= len(vals) || vals[i] == nil {
 		return nil
 	}
 
-	root := &TreeNode{Val: vals[i]}
+	root := &TreeNode{Val: vals[i].Value}
 	root.Left = createBinarySubTree(vals, 2*i+1)
 	root.Right = createBinarySubTree(vals, 2*i+2)
 	return root
