@@ -1,5 +1,7 @@
 package practice
 
+import . "AlgoPractice/src/linkedlist/structure"
+
 /*
 Problem:
 Ref: https://leetcode.com/problems/add-two-numbers/description/
@@ -19,6 +21,9 @@ Constraints:
 First approach:
 I will iterate 2 lists at the same time and I will add 2 digits at the same position and store the result to response list
 If sum of 2 digits is greater than 9, the digit in result will be sum mod 10 and bonus for next position will be sum / 10
+
+Time complexity: O(n)
+Space complexity: O(1)
 */
 
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {

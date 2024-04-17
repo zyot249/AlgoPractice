@@ -1,6 +1,7 @@
 package practice
 
 import (
+	. "AlgoPractice/src/linkedlist/structure"
 	"reflect"
 	"testing"
 )

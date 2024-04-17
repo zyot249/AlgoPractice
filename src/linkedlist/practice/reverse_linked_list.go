@@ -1,5 +1,7 @@
 package practice
 
+import . "AlgoPractice/src/linkedlist/structure"
+
 /*
 Problem:
 Ref: https://leetcode.com/problems/reverse-linked-list/description/

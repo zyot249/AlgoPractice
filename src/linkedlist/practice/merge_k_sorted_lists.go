@@ -1,5 +1,7 @@
 package practice
 
+import . "AlgoPractice/src/linkedlist/structure"
+
 /*
 Problem:
 Ref: https://leetcode.com/problems/merge-k-sorted-lists/description/

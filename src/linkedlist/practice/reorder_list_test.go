@@ -1,5 +1,7 @@
 package practice
 
+import . "AlgoPractice/src/linkedlist/structure"
+
 import "testing"
 
 func Test_reorderList(t *testing.T) {
