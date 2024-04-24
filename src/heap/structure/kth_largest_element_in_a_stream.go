@@ -26,11 +26,11 @@ We will use a min heap of size K
 
 type KthLargest struct {
 	K       int
-	MinHeap *IntHeap
+	MinHeap *IntMinHeap
 }
 
 func Constructor(k int, nums []int) KthLargest {
-	tmp := IntHeap(nums)
+	tmp := IntMinHeap(nums)
 	this := KthLargest{k, &tmp}
 	heap.Init(this.MinHeap)
 	for len(*this.MinHeap) > k {
