@@ -32,7 +32,7 @@ Constraints:
 /*
 First approach:
 In order to get news feed, get all the tweets from user and his/her followees,
-Sort them and return top 10
+Apply merging k sorted lists and return result
 */
 
 type Tweet struct {

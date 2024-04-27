@@ -29,7 +29,7 @@ type KthLargest struct {
 	MinHeap *IntMinHeap
 }
 
-func Constructor(k int, nums []int) KthLargest {
+func KthLargestConstructor(k int, nums []int) KthLargest {
 	tmp := IntMinHeap(nums)
 	this := KthLargest{k, &tmp}
 	heap.Init(this.MinHeap)
