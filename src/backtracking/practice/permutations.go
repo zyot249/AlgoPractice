@@ -20,6 +20,8 @@ First approach:
 For each element in array, I find all the permutations of the rest elements in array
 Base condition:
 if length of array = 1 => return it
+
+Time complexity: O(n!)
 */
 
 func permute(nums []int) [][]int {
@@ -30,7 +32,6 @@ func permute(nums []int) [][]int {
 	}
 
 	for i, num := range nums {
-
 		var rest []int
 		for j := 0; j < len(nums); j++ {
 			if j != i {
@@ -38,8 +39,8 @@ func permute(nums []int) [][]int {
 			}
 		}
 
-		permus := permute(rest)
-		for _, perm := range permus {
+		perms := permute(rest)
+		for _, perm := range perms {
 			result = append(result, append([]int{num}, perm...))
 		}
 	}
