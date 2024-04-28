@@ -38,7 +38,7 @@ func subsetsWithDup1(nums []int) [][]int {
 		sets := subsetsWithDup(nums[i+1:])
 		for _, set := range sets {
 			subset := append([]int{num}, set...)
-			if !exist(res, subset) {
+			if !existSet(res, subset) {
 				res = append(res, subset)
 			}
 		}
@@ -47,7 +47,7 @@ func subsetsWithDup1(nums []int) [][]int {
 	return res
 }
 
-func exist(res [][]int, set []int) bool {
+func existSet(res [][]int, set []int) bool {
 	for _, s := range res {
 		if compareSet(s, set) {
 			return true
