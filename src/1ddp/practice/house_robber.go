@@ -25,21 +25,33 @@ If there are n houses => the greater one between the amount robbed from n-1 hous
 
 Time complexity: O(n)
 Space complexity: O(n)
+
+Improvement 1:
+Instead of storing all the result from 0 -> n, we can only store the last 2 results
 */
 
-func rob(nums []int) int {
-	if len(nums) == 1 {
-		return nums[0]
-	} else if len(nums) == 2 {
-		return max(nums[0], nums[1])
+func rob1(nums []int) int {
+	//if len(nums) == 1 {
+	//	return nums[0]
+	//} else if len(nums) == 2 {
+	//	return max(nums[0], nums[1])
+	//}
+	//
+	//result := make([]int, len(nums)+1)
+	//result[0] = nums[0]
+	//result[1] = max(nums[0], nums[1])
+	//for i := 2; i < len(nums); i++ {
+	//	result[i] = max(result[i-1], result[i-2]+nums[i])
+	//}
+	//
+	//return result[len(nums)-1]
+
+	r1, r2 := 0, 0
+	for _, num := range nums {
+		tmp := r2
+		r2 = max(r1+num, r2)
+		r1 = tmp
 	}
 
-	result := make([]int, len(nums)+1)
-	result[0] = nums[0]
-	result[1] = max(nums[0], nums[1])
-	for i := 2; i < len(nums); i++ {
-		result[i] = max(result[i-1], result[i-2]+nums[i])
-	}
-
-	return result[len(nums)-1]
+	return r2
 }
